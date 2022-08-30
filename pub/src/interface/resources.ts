@@ -21,20 +21,16 @@ type Resource<ID, DATA> = {
 
 export type HTTPSResource = Resource<Path, string>
 
-export type CreateHTTPSResource_Data = {
-    hostName: string,
-    contextPath: Path,
-}
-
-export type CreateHTTPSResource_Algorithms = {
-    onError: ($: HTTPSError) => void
-}
-
 type Creator<DATA, ALGORITHMS, INTERFACE> = ($: DATA, $a: ALGORITHMS) => INTERFACE;
 
 
 export type CreateHTTPSResource = Creator<
-    CreateHTTPSResource_Data,
-    CreateHTTPSResource_Algorithms,
-    HTTPSResource 
+    {
+        hostName: string,
+        contextPath: Path,
+    },
+    {
+        onError: ($: HTTPSError) => void
+    },
+    HTTPSResource
 >
