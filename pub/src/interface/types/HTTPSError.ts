@@ -1,2 +1,2 @@
-export type HTTPSError =
+export type THTTPSError =
 | ["unknown", string]
