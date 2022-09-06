@@ -5,28 +5,26 @@ import { TPath } from "../types/x";
 
 
 
-export type XResource<ID, DATA> = {
-    get: ($: {
-        id: ID;
-    }, $i: {
-        onNotExists: () => void
-        onFailed: () => void
-        init: () => IStreamConsumer<DATA>
-    }) => pt.AsyncNonValue
-};
 
-export type XHTTPSResource = XResource<TPath, string>
-
-export type XCreator<DATA, ALGORITHMS, INTERFACE> = ($: DATA, $a: ALGORITHMS) => INTERFACE;
-
-
-export type XCreateHTTPSResource = XCreator<
-    {
-        hostName: string,
-        contextPath: TPath,
+export type PHTTPSResource = (
+    $: {
+        readonly "id": TPath;
     },
-    {
-        onError: ($: THTTPSError) => void
+    $i: {
+        readonly "onNotExists": () => void
+        readonly "onFailed": () => void
+        readonly "init": () => IStreamConsumer<string>
     },
-    XHTTPSResource
->
+    $a: pt.ProcessAsyncValue
+) => void
+
+export type FCreateHTTPSResource = (
+    $: {
+        readonly "hostName": string,
+        readonly "contextPath": TPath,
+    },
+    $i: {
+        readonly "onError": ($: THTTPSError) => void
+    },
+) => PHTTPSResource
+
