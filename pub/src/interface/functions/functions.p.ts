@@ -1,12 +1,10 @@
 import * as pt from "pareto-core-types"
-import { IStreamConsumer } from "../interfaces/x";
-import { THTTPSError } from "../types/HTTPSError"
-import { TPath } from "../types/x";
 
+import { IStreamConsumer } from "../interfaces/StreamConsumer.p"
+import { THTTPSError } from "../types/HTTPSError.p"
+import { TPath } from "../types/Path.p"
 
-
-
-export type PHTTPSResource = (
+export type FHTTPSResource = (
     $: {
         readonly "id": TPath;
     },
@@ -26,5 +24,5 @@ export type FCreateHTTPSResource = (
     $i: {
         readonly "onError": ($: THTTPSError) => void
     },
-) => PHTTPSResource
+) => FHTTPSResource
 

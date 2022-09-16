@@ -1,6 +1,6 @@
 
 
-export * from "./algorithms/resources"
-export * from "./types/HTTPSError"
-export * from "./types/x"
-export * from "./interfaces/x"
+export * from "./functions/functions.p"
+export * from "./types/HTTPSError.p"
+export * from "./types/Path.p"
+export * from "./interfaces/StreamConsumer.p"
