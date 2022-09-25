@@ -1,6 +1,7 @@
 import * as pt from "pareto-core-types"
 
 import { IStreamConsumer } from "../interfaces/StreamConsumer.p"
+import { THostConfiguration } from "../types/HostConfiguration.p"
 import { THTTPSError } from "../types/HTTPSError.p"
 import { TPath } from "../types/Path.p"
 
@@ -17,10 +18,7 @@ export type FHTTPSResource = (
 ) => void
 
 export type FCreateHTTPSResource = (
-    $: {
-        readonly "hostName": string,
-        readonly "contextPath": TPath,
-    },
+    $: THostConfiguration,
     $i: {
         readonly "onError": ($: THTTPSError) => void
     },
