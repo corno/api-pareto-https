@@ -22,6 +22,6 @@
   },
   "types": "dist/index.d.ts",
   "version": "0.7.0",
-  "interface-fingerprint": "4e10db3f6257f8a8765dbe7f8f63ea7460f0a875",
-  "content-fingerprint": "ecfda55157c35c2a4fe6f6717398f331e1c70d64"
+  "interface-fingerprint": "dec651145bd0de4c12912924b28da9f5bb859d51",
+  "content-fingerprint": "ebf99dee97f61a8dad17e834bd0bbaa81e3188fe"
 }
